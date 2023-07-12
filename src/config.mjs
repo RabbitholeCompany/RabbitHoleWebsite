@@ -1,56 +1,56 @@
-import defaultImage from './assets/images/default.png';
+import defaultImage from "./assets/images/default.png";
 
 const CONFIG = {
-  name: 'AstroWind',
+  name: "RabbitHole Company",
 
-  origin: 'https://astrowind.vercel.app',
-  basePathname: '/',
+  origin: "https://rabbitholecompany.co.kr",
+  basePathname: "/",
   trailingSlash: false,
 
-  title: 'AstroWind — Free template for create a website with Astro + Tailwind CSS',
+  title: "RabbitHole Company - new generation of VR education",
   description:
-    '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
+    "🐰 Provide English, Mathematics and Sciences Eduction with lastest VR technology",
   defaultImage: defaultImage,
 
-  defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  defaultTheme: "system", // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
-  language: 'en',
-  textDirection: 'ltr',
+  language: "ko",
+  textDirection: "ltr",
 
-  dateFormatter: new Intl.DateTimeFormat('en', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    timeZone: 'UTC',
+  dateFormatter: new Intl.DateTimeFormat("en", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
   }),
 
   googleAnalyticsId: false, // or "G-XXXXXXXXXX",
-  googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
+  googleSiteVerificationId: false, //"orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M",
 
   blog: {
     disabled: false,
     postsPerPage: 4,
 
     post: {
-      permalink: '/%slug%', // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: "/%slug%", // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
       noindex: false,
       disabled: false,
     },
 
     list: {
-      pathname: 'blog', // Blog main path, you can change this to "articles" (/articles)
+      pathname: "blog", // Blog main path, you can change this to "articles" (/articles)
       noindex: false,
       disabled: false,
     },
 
     category: {
-      pathname: 'category', // Category main path /category/some-category
+      pathname: "category", // Category main path /category/some-category
       noindex: true,
       disabled: false,
     },
 
     tag: {
-      pathname: 'tag', // Tag main path /tag/some-tag
+      pathname: "tag", // Tag main path /tag/some-tag
       noindex: true,
       disabled: false,
     },
