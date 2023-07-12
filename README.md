@@ -3,7 +3,7 @@
 <img src="https://raw.githubusercontent.com/onwidget/.github/main/resources/astrowind/lighthouse-score.png" align="right"
      alt="AstroWind Lighthouse Score" width="100" height="358">
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/41688a5c-3b64-45f9-8bf4-d8cc5359d6ba/deploy-status)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/41688a5c-3b64-45f9-8bf4-d8cc5359d6ba/deploy-status)](https://app.netlify.com/sites/rabbitholecompany/deploys)
 
 🌟 _Most *starred* & *forked* Astro theme in 2022_. 🌟
 
