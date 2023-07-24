@@ -3,16 +3,16 @@ import defaultImage from "./assets/images/default.png";
 const CONFIG = {
   name: "RabbitHole Company",
 
-  origin: "https://rabbitholecompany.co.kr",
+  origin: "https://rabbitholecompany.com",
   basePathname: "/",
   trailingSlash: false,
 
-  title: "RabbitHole Company - new generation of VR education",
+  title: "RabbitHole Education - new generation of VR education",
   description:
-    "🐰 Provide English, Mathematics and Sciences Eduction with lastest VR technology",
+    "🐰 Provide English, Mathematics and Science Education with lastest VR technology",
   defaultImage: defaultImage,
 
-  defaultTheme: "system", // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  defaultTheme: "light:only", // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
   language: "ko",
   textDirection: "ltr",

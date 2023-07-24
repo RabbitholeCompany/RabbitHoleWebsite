@@ -1,0 +1,225 @@
+---
+import Layout from "~/layouts/PageLayout.astro";
+
+import Header from "~/components/widgets/Header.astro";
+import Hero2 from "~/components/widgets/Hero2.astro";
+import Steps2 from "~/components/widgets/Steps2.astro";
+import Content from "~/components/widgets/Content.astro";
+import CallToAction from "~/components/widgets/ComIntroCallToAction.astro";
+
+import { headerData } from "~/data";
+
+const meta = {
+  title: "회사 소개",
+};
+---
+
+<Layout {meta}>
+  <Fragment slot="header">
+    <Header {...headerData} isSticky />
+  </Fragment>
+
+  <!-- actions={[
+        {
+          type: "ghost",
+          text: "Login",
+          href: "#",
+        },
+        {
+          type: "primary",
+          text: "Sign Up",
+          href: "#",
+        },
+      ]} -->
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    callToAction={{
+      text: "IR 자료 다운로드",
+      href: "/src/assets/files/IR_TEST.pdf",
+      icon: "tabler:download",
+    }}
+    image={{
+      src: import("~/assets/images/rabbit.png"),
+      alt: "AstroWind Hero Image",
+    }}>
+    <Fragment slot="title">
+      모든 사람에게
+      <span class="text-accent dark:text-white highlight">살아있는 교육</span>을
+      <br />
+      제공합니다.
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="inline">
+        래빗홀 컴퍼니는 <span class="font-semibold">VR</span>과
+        <span class="font-semibold">생성형 AI</span>를 이용하여 모든 사람에게
+        <span class="font-semibold">살아있는 교육 솔루션</span>을 제공합니다.
+        <span class="hidden md:inline"><br /></span>
+        이상한 나라의 앨리스가 토끼굴을 통해 상상력만이 한계인 곳으로 모험을 떠난
+        것처럼,
+        <br />우리도 아이들에게
+        <span class="font-semibold">상상력만이 한계인 모험</span>을
+        선사해줍니다.
+      </span>
+    </Fragment>
+  </Hero2>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: "지역과 빈부에 편향적인 교육의 개혁",
+        description:
+          "지금의 교육은 지역과 빈부에 편향적입니다. 래빗홀은 교육의 불균형을 혁신적으로 해결하고자 합니다. 우리는 모든 사람들이 저렴한 가격에 균일한 교육을 제공받을 수 있게 합니다.",
+      },
+      {
+        title: "VR을 이용한 살아있는 교육",
+        description:
+          "교육이 갖고 있는 다른 문제는 매체의 문제입니다. 일상생활에서 사용하는 매체는 입체적 전자기기의 등장으로 바뀌었지만, 교육만은 옛날의 평면적 매체에 머물러있습니다. 래빗홀은 VR이라는 새로운 매체로 아이들에게 살아있는 교육을 제공하고자 합니다.",
+      },
+    ]}
+    image={{
+      src: import("~/assets/images/virtual_study.jpg"),
+      alt: "Colorful Image",
+    }}>
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        래빗홀 컴퍼니는 VR과 생성형 AI를 이용하여 <br />모든 사람에게 살아있는
+        교육 솔루션을 제공합니다.
+      </h3>
+      <br />
+      우리는 현 교육의 두 가지 문제를 '기술'을 통해 획기적으로 해결하는 솔루션을
+      개발합니다.
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+  <!-- 
+  <Content
+    items={[
+      {
+        title: "Per ei quaeque sensibus",
+        description:
+          "Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.",
+      },
+      {
+        title: "Cu imperdiet posidonium sed",
+        description:
+          "Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.",
+      },
+      {
+        title: "Nulla omittam sadipscing mel ne",
+        description:
+          "At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.",
+      },
+    ]}
+    image={{
+      src: import("~/assets/images/caos.jpg"),
+      alt: "Colorful Image",
+    }}>
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Ad vix debet docendi
+      </h3>
+      Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione
+      ut, persius eripuit quo id. Sit te euismod tacimates.
+    </Fragment>
+  </Content> -->
+
+  <!-- Content Widget **************** -->
+  <!-- 
+  <Content
+    isReversed
+    items={[
+      {
+        title: "Per ei quaeque sensibus",
+        description:
+          "Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.",
+      },
+      {
+        title: "Cu imperdiet posidonium sed",
+        description:
+          "Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.",
+      },
+      {
+        title: "Nulla omittam sadipscing mel ne",
+        description:
+          "At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.",
+      },
+    ]}
+    image={{
+      src: import("~/assets/images/caos.jpg"),
+      alt: "Colorful Image",
+    }}>
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Ad vix debet docendi
+      </h3>
+      Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione
+      ut, persius eripuit quo id. Sit te euismod tacimates.
+    </Fragment>
+  </Content> -->
+
+  <!-- Steps2 Widget ****************** -->
+  <!-- 
+  <Steps2
+    title="Sed ac magna sit amet risus tristique interdum, at vel velit in hac habitasse platea dictumst."
+    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus."
+    callToAction={{
+      text: "Get template",
+      href: "https://github.com/onwidget/astrowind",
+      icon: "tabler:download",
+    }}
+    items={[
+      {
+        title: "Responsive Elements",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
+      },
+      {
+        title: "Flexible Team",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
+      },
+      {
+        title: "Ecologic Software",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
+      },
+    ]}
+  /> -->
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    callToAction={{
+      text: "💵 투자 유치",
+      href: "#toja",
+    }}
+    callToAction2={{
+      text: "🙋‍♂️ 팀원 소개",
+      href: "#text",
+    }}
+    callToAction3={{
+      text: "📞 컨텍",
+      href: "#text",
+    }}
+    callToAction4={{
+      text: "📊 마일스톤",
+      href: "#text",
+    }}>
+    <Fragment slot="title">래빗홀의 여정이 궁금하시나요?</Fragment>
+
+    <Fragment slot="subtitle">
+      언제든 자유롭게 우리들의 '업'을 구경하세요. <br />저희와 함께 이상한
+      나라로의 여행을 원한다면 망설이지 마세요.
+    </Fragment>
+  </CallToAction>
+</Layout>
