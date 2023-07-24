@@ -1,0 +1,155 @@
+---
+import { Icon } from "astro-icon";
+
+interface CallToAction {
+  text: string;
+  href: string;
+  icon?: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  callToAction?: string | CallToAction;
+  callToAction2?: string | CallToAction;
+  callToAction3?: string | CallToAction;
+  callToAction4?: string | CallToAction;
+}
+
+const {
+  title = await Astro.slots.render("title"),
+  subtitle = await Astro.slots.render("subtitle"),
+  callToAction = await Astro.slots.render("callToAction"),
+  callToAction2 = await Astro.slots.render("callToAction"),
+  callToAction3 = await Astro.slots.render("callToAction"),
+  callToAction4 = await Astro.slots.render("callToAction"),
+} = Astro.props;
+---
+
+<section class="relative not-prose">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="py-12 md:py-20">
+      <div
+        class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
+        {
+          title && (
+            <h2
+              class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+              set:html={title}
+            />
+          )
+        }
+        {
+          subtitle && (
+            <p
+              class="text-xl text-muted dark:text-slate-400"
+              set:html={subtitle}
+            />
+          )
+        }
+        <div class="flex mx-auto flex-row flex-wrap">
+          {
+            typeof callToAction === "string" ? (
+              <Fragment set:html={callToAction} />
+            ) : (
+              callToAction &&
+              callToAction.text &&
+              callToAction.href && (
+                <div class="mt-6 w-2/5 mx-auto">
+                  <a
+                    class="btn btn-primary w-full"
+                    href={callToAction.href}
+                    rel="noopener">
+                    {callToAction.icon && (
+                      <Icon
+                        name={callToAction.icon}
+                        class="w-5 h-5 mr-1 -ml-1.5"
+                      />
+                    )}
+                    {callToAction.text}
+                  </a>
+                </div>
+              )
+            )
+          }
+          {
+            typeof callToAction2 === "string" ? (
+              <Fragment set:html={callToAction2} />
+            ) : (
+              callToAction2 &&
+              callToAction2.text &&
+              callToAction2.href && (
+                <div class="mt-6 w-2/5 mx-auto">
+                  <a
+                    class="btn btn-primary w-full"
+                    href={callToAction2.href}
+                    target="_blank"
+                    rel="noopener">
+                    {callToAction2.icon && (
+                      <Icon
+                        name={callToAction2.icon}
+                        class="w-5 h-5 mr-1 -ml-1.5"
+                      />
+                    )}
+                    {callToAction2.text}
+                  </a>
+                </div>
+              )
+            )
+          }
+          {
+            typeof callToAction3 === "string" ? (
+              <Fragment set:html={callToAction3} />
+            ) : (
+              callToAction3 &&
+              callToAction3.text &&
+              callToAction3.href && (
+                <div class="mt-6 w-2/5 mx-auto">
+                  <a
+                    class="btn btn-primary w-full"
+                    href={callToAction3.href}
+                    target="_blank"
+                    rel="noopener">
+                    {callToAction3.icon && (
+                      <Icon
+                        name={callToAction3.icon}
+                        class="w-5 h-5 mr-1 -ml-1.5"
+                      />
+                    )}
+                    {callToAction3.text}
+                  </a>
+                </div>
+              )
+            )
+          }
+          {
+            typeof callToAction4 === "string" ? (
+              <Fragment set:html={callToAction4} />
+            ) : (
+              callToAction4 &&
+              callToAction4.text &&
+              callToAction4.href && (
+                <div class="mt-6 w-2/5 mx-auto">
+                  <a
+                    class="btn btn-primary w-full"
+                    href={callToAction4.href}
+                    target="_blank"
+                    rel="noopener">
+                    {callToAction4.icon && (
+                      <Icon
+                        name={callToAction4.icon}
+                        class="w-5 h-5 mr-1 -ml-1.5"
+                      />
+                    )}
+                    {callToAction4.text}
+                  </a>
+                </div>
+              )
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
