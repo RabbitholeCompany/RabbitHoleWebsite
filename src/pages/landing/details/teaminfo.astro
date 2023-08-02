@@ -1,0 +1,80 @@
+---
+import Layout from "~/layouts/PageLayout.astro";
+
+import Header from "~/components/widgets/Header.astro";
+import { headerData } from "~/data";
+import Teamlist from "~/components/widgets/Teamlist.astro";
+
+const meta = {
+  title: "팀원 소개",
+};
+---
+
+<Layout {meta}>
+  <Fragment slot="Header">
+    <Header {...headerData} isSticky />
+  </Fragment>
+
+  <Teamlist
+    title="팀 소개"
+    subtitle="래빗홀 컴퍼니의 🐰토끼들을 소개합니다. 아.. 아니 개발자요"
+    items={[
+      {
+        name: "박재민",
+        position: "대표",
+        image: {
+          src: import("~/assets/images/teamPicture/pjm.jpg"),
+          alt: "PJM image",
+        },
+      },
+      {
+        name: "문창준",
+        position: "PM / 앱 Product",
+        image: {
+          src: import("~/assets/images/teamPicture/mcj.jpeg"),
+          alt: "MCJ image",
+        },
+      },
+      {
+        name: "여다겸",
+        position: "VR Product / 서버",
+        image: {
+          src: import("~/assets/images/teamPicture/ydg.jpeg"),
+          alt: "YDG image",
+        },
+      },
+      {
+        name: "이재훈",
+        position: "AI Tech",
+        image: {
+          src: import("~/assets/images/teamPicture/ljh.jpg"),
+          alt: "LJH image",
+        },
+      },
+      {
+        name: "이창석",
+        position: "법률 / 재무",
+        image: {
+          src: import("~/assets/images/teamPicture/lcs.jpg"),
+          alt: "LCS image",
+        },
+      },
+      {
+        name: "허수영",
+        position: "디자인 / 모델링",
+        image: {
+          src: import("~/assets/images/teamPicture/hsy.png"),
+          alt: "HSY image",
+        },
+      },
+      {
+        name: "황윤정",
+        position: "디자인 / 모델링",
+        image: {
+          src: import("~/assets/images/teamPicture/hyj.jpeg"),
+          alt: "HYJ image",
+        },
+      },
+    ]}
+  />
+</Layout>

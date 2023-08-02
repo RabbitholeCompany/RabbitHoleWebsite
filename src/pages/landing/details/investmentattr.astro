@@ -1,0 +1,27 @@
+---
+import Layout from "~/layouts/PageLayout.astro";
+
+import Header from "~/components/widgets/Header.astro";
+import { headerData } from "~/data";
+import InvestList from "~/components/widgets/InvestList.astro";
+
+const meta = {
+  title: "투자 유치",
+};
+---
+
+<Layout {meta}>
+  <Fragment slot="header">
+    <Header {...headerData} isSticky />
+  </Fragment>
+
+  <InvestList
+    title="투자 유치 현황"
+    items={[
+      {
+        title: "많은 투자 바랍니다.",
+        description: "투자 대기 중",
+      },
+    ]}
+  />
+</Layout>

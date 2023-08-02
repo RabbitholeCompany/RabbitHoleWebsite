@@ -1,0 +1,20 @@
+---
+import Layout from "~/layouts/PageLayout.astro";
+
+import Header from "~/components/widgets/Header.astro";
+import { headerData } from "~/data";
+
+const meta = {
+  title: "마일스톤",
+};
+---
+
+<Layout {meta}>
+  <Fragment slot="header">
+    <Header {...headerData} isSticky />
+  </Fragment>
+
+  <div class="flex items-center justify-center">
+    <img src="/src/assets/images/milestone.png" alt="milestone image" />
+  </div>
+</Layout>

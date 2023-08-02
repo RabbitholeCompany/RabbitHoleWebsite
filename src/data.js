@@ -11,53 +11,37 @@ export const headerData = {
         },
         {
           text: "팀 소개",
-          href: getPermalink("/landing/startup"),
+          href: getPermalink("/landing/details/teaminfo"),
         },
         {
           text: "투자 유치",
-          href: getPermalink("/landing/mobile-app"),
+          href: getPermalink("/landing/details/investmentattr"),
         },
         {
           text: "컨텍",
-          href: getPermalink("/landing/mobile-app"),
+          href: getPermalink("/landing/details/contact"),
         },
         {
           text: "마일스톤",
-          href: getPermalink("/landing/mobile-app"),
+          href: getPermalink("/landing/details/milestone"),
         },
       ],
     },
     {
-      text: "제품 소개",
+      text: "제품",
       links: [
         {
-          text: "깡총 영어 (V 1.0)",
+          text: "B2B 제품",
           href: getPermalink("/#features"),
         },
         {
-          text: "깡총 수학 (Beta)",
+          text: "B2C 제품",
           href: "#",
-        },
-        {
-          text: "깡총 학습 시리즈",
-          href: "#",
-        },
-        {
-          text: "문의",
-          href: "#",
-        },
-        {
-          text: "이용약관",
-          href: getPermalink("/terms"),
-        },
-        {
-          text: "개인정보 정책",
-          href: getPermalink("/privacy"),
         },
       ],
     },
     {
-      text: "가격 정책",
+      text: "Q & A",
       href: "#",
     },
     {
@@ -80,11 +64,10 @@ export const footerData = {
       title: "래빗홀",
       links: [
         { text: "회사 소개", href: getPermalink("/landing/companyintro") },
-        { text: "팀 소개", href: "#" },
-        { text: "투자 유치", href: "#" },
-        { text: "연락", href: "#" },
-        { text: "", href: "#" },
-        { text: "", href: "#" },
+        { text: "팀 소개", href: "/landing/details/teaminfo" },
+        { text: "투자 유치", href: "/landing/details/investmentattr" },
+        { text: "컨텍", href: "/landing/details/contact" },
+        { text: "마일스톤", href: "/landing/details/milestone" },
       ],
     },
     {
