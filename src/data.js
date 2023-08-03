@@ -53,7 +53,7 @@ export const headerData = {
     {
       type: "button",
       text: "무료 체험 신청",
-      href: "https://github.com/onwidget/astrowind",
+      href: "/landing/details/contact",
     },
   ],
 };
