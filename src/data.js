@@ -44,10 +44,10 @@ export const headerData = {
       text: "Q & A",
       href: "#",
     },
-    // {
-    //   text: "블로그",
-    //   href: getBlogPermalink(),
-    // },
+    {
+      text: "블로그",
+      href: getBlogPermalink(),
+    },
   ],
   actions: [
     {
