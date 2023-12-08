@@ -6,9 +6,8 @@
     "baseUrl": ".",
     "strict": true,
     "paths": {
-      "/src/*": ["./src/*"],
+      //"/src/*": ["./src/*"],
       "~/*": ["./src/*"]
     }
-  },
-  "exclude": ["node_modules", "**/node_modules/*"]
+  }
 }
