@@ -8,6 +8,8 @@ import Pagination from "~/components/blog/Pagination.astro";
 
 import { fetchPosts } from "~/utils/blog";
 import { CATEGORY_BASE } from "~/utils/permalinks";
+import type { AnyPtrRecord } from "dns";
+import type { PaginateOptions } from "astro";
 
 export async function getStaticPaths({ paginate }) {
   if (BLOG?.disabled || BLOG?.category?.disabled) return [];

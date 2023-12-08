@@ -6,6 +6,20 @@ console.log("hey");
 
 console.log("Handler Start");
 
+// Callback from submit button (token)
+function onSubmit(token) {
+  fetch("/recaptcha", {
+    method: "POST",
+    body: JSON.stringify({ recaptcha: token }),
+  })
+    .then((response) => response.json())
+    .then((gResponse) => {
+      if (gResponse.sucess) {
+      } else {
+      }
+    });
+}
+
 // get all data in form and return object
 function getFormData(form) {
   var elements = form.elements;

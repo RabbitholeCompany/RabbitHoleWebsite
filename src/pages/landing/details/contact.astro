@@ -5,6 +5,8 @@ import Header from "~/components/widgets/Header.astro";
 import { headerData } from "~/data";
 import Icon from "astro-icon";
 
+export const prerender = true;
+
 const meta = {
   title: "컨택",
 };
@@ -114,8 +116,10 @@ const errors = { name: "", message: "", email: "" };
                 </fieldset>
 
                 <button
-                  class="btn-success button-xlarge mt-6 bg-purple-400 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded inline-flex items-center gap-3"
-                  type="submit">
+                  class="g-recaptcha btn-success button-xlarge mt-6 bg-purple-400 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded inline-flex items-center gap-3"
+                  data-sitekey="6Les1SopAAAAAAY1HC8gjN91VUJw0zJNq5E1VmpL"
+                  data-callback="onSubmit"
+                  data-action="submit">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="1em"

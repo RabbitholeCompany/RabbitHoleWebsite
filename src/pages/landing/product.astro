@@ -1,0 +1,31 @@
+---
+import Layout from "~/layouts/PageLayout.astro";
+import Header from "/src/components/widgets/Header.astro";
+import { headerData } from "/src/data";
+
+const meta = {
+  title: "제품",
+};
+---
+
+<Layout {meta}>
+  <Fragment slot="header">
+    <Header {...headerData} isSticky />
+  </Fragment>
+
+  <div id="live-zone" class="row-auto">
+    <div id="div-one" class="w-72 h-full overflow-hidden absolute">
+      <img
+        id="img-one"
+        class="h-full z-index:9999"
+        src="/src/assets/images/kingfisher_1.jpg"
+      />
+    </div>
+    <div id="div-two">
+      <img id="img-two h-full" src="/src/assets/images/birds_2.jpg" />
+    </div>
+    <div id="x-pos">200px</div>
+  </div>
+
+  <script src="../../scripts/image_cross.js"></script>
+</Layout>

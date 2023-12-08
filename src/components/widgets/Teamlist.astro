@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon";
-import { Picture } from "@astrojs/image/components";
+import { Picture } from "astro:assets";
 
 interface Item {
   name?: string;
@@ -67,13 +67,11 @@ const {
                       <Fragment set:html={image} />
                     ) : (
                       <Picture
-                        class="mx-auto rounded-2xl w-min"
-                        widths={[120, 200, 280, 360]}
+                        class="mx-auto rounded-2xl"
                         sizes="220px"
-                        aspectRatio={1}
                         loading="eager"
-                        width={360}
-                        height={360}
+                        width="360"
+                        height="360"
                         {...image}
                       />
                     )}
