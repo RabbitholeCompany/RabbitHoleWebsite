@@ -1,13 +1,15 @@
 ---
-import { SITE, BLOG } from '~/config.mjs';
+export const prerender = true;
 
-import Layout from '~/layouts/PageLayout.astro';
-import BlogList from '~/components/blog/List.astro';
-import Pagination from '~/components/blog/Pagination.astro';
+import { SITE, BLOG } from "~/config.mjs";
 
-import { fetchPosts } from '~/utils/blog';
-import { TAG_BASE } from '~/utils/permalinks';
-import Headline from '~/components/blog/Headline.astro';
+import Layout from "~/layouts/PageLayout.astro";
+import BlogList from "~/components/blog/List.astro";
+import Pagination from "~/components/blog/Pagination.astro";
+
+import { fetchPosts } from "~/utils/blog";
+import { TAG_BASE } from "~/utils/permalinks";
+import Headline from "~/components/blog/Headline.astro";
 
 export async function getStaticPaths({ paginate }) {
   if (BLOG?.disabled || BLOG?.tag?.disabled) return [];
@@ -15,12 +17,17 @@ export async function getStaticPaths({ paginate }) {
   const posts = await fetchPosts();
   const tags = new Set();
   posts.map((post) => {
-    Array.isArray(post.tags) && post.tags.map((tag) => tags.add(tag.toLowerCase()));
+    Array.isArray(post.tags) &&
+      post.tags.map((tag) => tags.add(tag.toLowerCase()));
   });
 
   return Array.from(tags).map((tag: string) =>
     paginate(
-      posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.toLowerCase() === tag)),
+      posts.filter(
+        (post) =>
+          Array.isArray(post.tags) &&
+          post.tags.find((elem) => elem.toLowerCase() === tag)
+      ),
       {
         params: { tag: tag, blog: TAG_BASE || undefined },
         pageSize: BLOG.postsPerPage,
@@ -34,7 +41,9 @@ const { page, tag } = Astro.props;
 
 const currentPage = page.currentPage ?? 1;
 const meta = {
-  title: `Posts by tag '${tag}'${currentPage > 1 ? ` — Page ${currentPage} ` : ''}`,
+  title: `Posts by tag '${tag}'${
+    currentPage > 1 ? ` — Page ${currentPage} ` : ""
+  }`,
   description: SITE.description,
   noindex: BLOG?.tag?.noindex,
 };
