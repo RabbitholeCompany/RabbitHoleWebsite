@@ -16,7 +16,6 @@ const errors = { name: "", message: "", email: "" };
   <Fragment slot="header">
     <Header {...headerData} isSticky />
   </Fragment>
-
   <div>
     <div class="md:flex py-8 px-28">
       <div class="py-6 px-10 md:basis-1/2">
@@ -113,9 +112,53 @@ const errors = { name: "", message: "", email: "" };
                   </div>
                 </fieldset>
 
+                <br />
+                <div
+                  id="recap"
+                  class="g-recaptcha"
+                  data-sitekey="6Les1SopAAAAAAY1HC8gjN91VUJw0zJNq5E1VmpL"
+                  data-callback="recaptchaCallback"
+                  data-expired-callback="expiredCallback">
+                </div>
+
+                <script is:inline>
+                  function recaptchaCallback(token) {
+                    console.log("recaptcha callback!");
+
+                    fetch("/src/scripts/recaptcha.js", {
+                      method: "POST",
+                      body: JSON.stringify({ recaptcha: token }),
+                    })
+                      .then((response) => Response.json(response)) //response.json())
+                      .then((gResponse) => {
+                        console.log(gResponse);
+
+                        if (gResponse.ok) {
+                          // Captcha verification was a success
+                          console.log("veri success");
+                          document
+                            .querySelector("#submit_button")
+                            .classList.replace("hidden", "block");
+                        } else {
+                          // Captcha verification failed
+                          console.log("veri failed");
+                          document
+                            .querySelector("#submit_button")
+                            .classList.add("block", "hidden");
+                        }
+                      });
+                  }
+
+                  function expiredCallback() {
+                    document
+                      .querySelector("#submit_button")
+                      .classList.add("block", "hidden");
+                  }
+                </script>
+
                 <button
-                  class="btn-success button-xlarge mt-6 bg-purple-400 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded inline-flex items-center gap-3"
-                  type="submit">
+                  id="submit_button"
+                  class="btn-success button-xlarge mt-6 bg-purple-400 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded inline-flex items-center gap-3 -scroll-ml-60 hidden">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="1em"
@@ -159,4 +202,4 @@ const errors = { name: "", message: "", email: "" };
   data-cfasync="false"
   type="text/javascript"
   src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"
-></script> -->
+></script> -->./recaptcha
