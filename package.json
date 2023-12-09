@@ -45,6 +45,7 @@
     "node": ">=16.12.0"
   },
   "dependencies": {
+    "@astrojs/netlify": "^2.4.0",
     "next-auth": "^4.22.1"
   }
 }

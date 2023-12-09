@@ -2,6 +2,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import { defineConfig } from "astro/config";
+import netlify from "@astrojs/netlify";
 
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
@@ -27,7 +28,8 @@ export default defineConfig({
   base: SITE.basePathname,
   trailingSlash: SITE.trailingSlash ? "always" : "never",
 
-  output: "static",
+  output: "server",
+  adapter: netlify(),
 
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
