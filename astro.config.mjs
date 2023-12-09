@@ -28,7 +28,7 @@ export default defineConfig({
   base: SITE.basePathname,
   trailingSlash: SITE.trailingSlash ? "always" : "never",
 
-  output: "server",
+  output: "hybrid",
   adapter: netlify(),
 
   markdown: {
