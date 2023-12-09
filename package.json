@@ -1,7 +1,7 @@
 {
   "name": "rabbitholecompany",
   "description": "Rabbithole Company Website",
-  "version": "0.9.8",
+  "version": "0.9.9",
   "private": false,
   "scripts": {
     "dev": "astro dev",
