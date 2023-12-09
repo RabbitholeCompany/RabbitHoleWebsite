@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import Layout from "~/layouts/PageLayout.astro";
 
 import Header from "~/components/widgets/Header.astro";
@@ -31,7 +33,7 @@ const meta = {
           href: "#",
         },
       ]} -->
-<!--callToAction={{
+  <!--callToAction={{
       text: "IR 자료 다운로드",
       href: "/src/assets/files/IR_TEST.pdf",
       icon: "tabler:download",
@@ -39,7 +41,6 @@ const meta = {
   <!-- Hero2 Widget ******************* -->
 
   <Hero2
-    
     image={{
       src: import("~/assets/images/rabbit.png"),
       alt: "AstroWind Hero Image",
